@@ -29,6 +29,10 @@ export class PlayerSprite extends Phaser.Physics.Arcade.Sprite {
         this.scene.input.on('pointermove', (p: Phaser.Input.Pointer) => {
             return this.mousePointer = p;
         });
+
+        this.scene.input.on('pointerdown', () => {
+            this.sword.hit();
+        });
         
         this.sword = new SwordSprite(scene);
     }
